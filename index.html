@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <button id="myButton">Load iframe</button>
+    <button id="myButton">Set Local Storage</button>
     <div id="iframeContainer"></div>
     <script>
         // Get a reference to the button element by its ID
@@ -15,9 +15,10 @@
 
         // Add an onclick event listener to the button
         button.onclick = function() {
+
             // Log a message to the console when the button is clicked
             const iframe = document.createElement("iframe");
-            iframe.src = "https://dc.dev.dexilab.acrobat.com/dc-hosted-extension/react-index.html#/originTrial";
+            iframe.src = "https://atul22.github.io/origin-trial-2/";
             iframe.style.width = "200px";
             iframe.style.height = "100px";
             iframe.style.border = "1px solid #ccc"; // Set border or other styles
