@@ -6,17 +6,15 @@
     <title>Button Click Example</title>
 </head>
 <body>
-
-    <button id="myButton">Set Local Storage</button>
+    <button id="myButton">Set Cookie</button>
     <script>
         // Get a reference to the button element by its ID
         var button = document.getElementById('myButton');
 
         // Add an onclick event listener to the button
         button.onclick = function() {
-            localStorage.setItem("Storage Partition", "Test");
+            document.cookie = 'cookie1=test; Secure; Path=/; SameSite=None; Partitioned';
         };
     </script>
-
 </body>
 </html>
