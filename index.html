@@ -6,17 +6,17 @@
     <title>Button Click Example</title>
 </head>
 <body>
-    <button id="myButton">Set Cookie</button>
-    <button id="myButton">Read Cookie</button>
+    <button id="setButton">Set Cookie</button>
+    <button id="readButton">Read Cookie</button>
     <script>
-        var setButton = document.getElementById('myButton');
-        var readButton = document.getElementById('myButton');
+        var setButton = document.getElementById('setButton');
+        var readButton = document.getElementById('readButton');
 
         setButton.onclick = function() {
             document.cookie = 'cookie1=test; Secure; Path=/; SameSite=None; Partitioned';
         };
         readButton.onclick = function() {
-            console.log(document.cookie);
+            console.log("Found this cookie ->", document.cookie);
         };
     </script>
 </body>
