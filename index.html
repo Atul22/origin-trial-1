@@ -7,13 +7,16 @@
 </head>
 <body>
     <button id="myButton">Set Cookie</button>
+    <button id="myButton">Read Cookie</button>
     <script>
-        // Get a reference to the button element by its ID
-        var button = document.getElementById('myButton');
+        var setButton = document.getElementById('myButton');
+        var readButton = document.getElementById('myButton');
 
-        // Add an onclick event listener to the button
-        button.onclick = function() {
+        setButton.onclick = function() {
             document.cookie = 'cookie1=test; Secure; Path=/; SameSite=None; Partitioned';
+        };
+        readButton.onclick = function() {
+            console.log(document.cookie);
         };
     </script>
 </body>
