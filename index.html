@@ -13,7 +13,7 @@
         var readButton = document.getElementById('readButton');
 
         setButton.onclick = function() {
-            document.cookie = 'cookie1=test';
+            document.cookie = 'cookie1=test; Path=/';
         };
         readButton.onclick = function() {
             console.log("Found this cookie ->", document.cookie);
