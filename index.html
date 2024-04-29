@@ -27,8 +27,20 @@
                 }
             }
         };
-        readButton.onclick = function() {
-            console.log("Found this cookie ->", document.cookie);
+        readButton.onclick = async function() {
+            if (!document.hasStorageAccess) {
+                console.log("Found this cookie ->", document.cookie);
+            } else {
+                const hasAccess = await document.hasStorageAccess();
+                if (hasAccess) {
+                    console.log("Found this cookie ->", document.cookie);
+                } else {
+                    await document.requestStorageAccess();
+                    const hasAccess = await document.hasStorageAccess();
+                    console.log("hasAccess", hasAccess);
+                    console.log("Found this cookie ->", document.cookie);
+                }
+            }
         };
     </script>
 </body>
