@@ -20,11 +20,10 @@
                 if (hasAccess) {
                     document.cookie = 'cookie1=test; Path=/; Secure; SameSite=None';
                 } else {
-                    const permission = await navigator.permissions.query({ name: "storage-access" });
-                    if (permission.state === "granted") {
-                        await document.requestStorageAccess();
-                        document.cookie = 'cookie1=test; Path=/; Secure; SameSite=None';
-                    }
+                    await document.requestStorageAccess();
+                    const hasAccess = await document.hasStorageAccess();
+                    console.log("hasAccess", hasAccess);
+                    document.cookie = 'cookie1=test; Path=/; Secure; SameSite=None';
                 }
             }
         };
