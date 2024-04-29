@@ -12,7 +12,7 @@
         var setButton = document.getElementById('setButton');
         var readButton = document.getElementById('readButton');
 
-        setButton.onclick = async function() {
+        async function setCookie() {
             if (!document.hasStorageAccess) {
                 document.cookie = 'cookie1=test; Path=/; Secure; SameSite=None';
             } else {
@@ -26,7 +26,11 @@
                     document.cookie = 'cookie1=test; Path=/; Secure; SameSite=None';
                 }
             }
-        };
+        }
+
+        window.onload = setCookie;
+        setButton.onclick = setCookie;
+
         readButton.onclick = async function() {
             if (!document.hasStorageAccess) {
                 console.log("Found this cookie ->", document.cookie);
