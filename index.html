@@ -28,10 +28,7 @@
             }
         }
 
-        window.onload = setCookie;
-        setButton.onclick = setCookie;
-
-        readButton.onclick = async function() {
+        async function readCookie() {
             if (!document.hasStorageAccess) {
                 console.log("Found this cookie ->", document.cookie);
             } else {
@@ -45,7 +42,16 @@
                     console.log("Found this cookie ->", document.cookie);
                 }
             }
-        };
+        }
+
+        window.onload = () => {
+            const search = new URLSearchParams(window.location.search);
+            if (search.get("setCookie"))  setTimeout(setCookie, 2000);
+            else readCookie();
+        }
+
+        setButton.onclick = setCookie;
+        readButton.onclick = readCookie;
     </script>
 </body>
 </html>
