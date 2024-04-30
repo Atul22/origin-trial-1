@@ -45,11 +45,17 @@
             }
         }
 
-        window.onload = () => {
+        // window.onload = () => {
+        //     const search = new URLSearchParams(window.location.search);
+        //     if (search.get("setCookie"))  setTimeout(setCookie, 2000);
+        //     else readCookie();
+        // }
+
+        document.addEventListener("mouseover", () => {
             const search = new URLSearchParams(window.location.search);
             if (search.get("setCookie"))  setTimeout(setCookie, 2000);
             else readCookie();
-        }
+        });
 
         setButton.onclick = setCookie;
         readButton.onclick = readCookie;
