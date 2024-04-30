@@ -29,6 +29,7 @@
         }
 
         async function readCookie() {
+            console.log("Without Access: Found this cookie ->", document.cookie);
             if (!document.hasStorageAccess) {
                 console.log("Found this cookie ->", document.cookie);
             } else {
