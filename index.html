@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://assets.adobedtm.com/d4d114c60e50/a0e989131fd5/launch-5dd5dd2177e6.min.js"></script>
     <title>Button Click Example</title>
 </head>
 <body>
@@ -50,12 +51,6 @@
         //     if (search.get("setCookie"))  setTimeout(setCookie, 2000);
         //     else readCookie();
         // }
-
-        document.addEventListener("mouseover", () => {
-            const search = new URLSearchParams(window.location.search);
-            if (search.get("setCookie"))  setTimeout(setCookie, 2000);
-            else readCookie();
-        });
 
         setButton.onclick = setCookie;
         readButton.onclick = readCookie;
